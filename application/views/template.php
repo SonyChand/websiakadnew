@@ -1,463 +1,294 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/Ionicons/css/ionicons.min.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
+  <title>Siakad</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
+  <!-- Favicons -->
+  <link href="<?= base_url('assets/') ?>img/logo/logo.png" rel="icon">
+  <link href="<?= base_url('assets/') ?>img/logo/logo.png" rel="apple-touch-icon">
 
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/css/bootstrap-select.min.css" integrity="sha512-mR/b5Y7FRsKqrYZou7uysnOdCIJib/7r5QeJMFvLNHNhtye3xJp1TdJVPLtetkukFn227nKpXD9OjUc09lx97Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Vendor CSS Files -->
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="<?= base_url('assets/backend/nice/assets') ?>/css/style.css" rel="stylesheet">
+
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
-  <div class="wrapper">
+<body>
 
-    <header class="main-header">
-
-      <!-- Logo -->
-      <a href="#" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>A</b>LT</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>Admin</b>LTE</span>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Siakad</span>
       </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
 
-      <!-- Header Navbar: style can be found in header.less -->
-      <nav class="navbar navbar-static-top">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-          <span class="sr-only">Toggle navigation</span>
-        </a>
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
 
-            <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                <span class="hidden-xs"><?php echo $this->session->userdata('nama_lengkap'); ?></span>
-              </a>
-              <ul class="dropdown-menu">
-                <!-- User image -->
-                <li class="user-header">
-                  <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
 
-                  <p>
-                    <?php echo $this->session->userdata('nama_lengkap'); ?>
-                    <small>Member since Nov. 2012</small>
-                  </p>
-                </li>
-                <!-- Menu Body -->
-                <!-- <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-              </li> -->
-                <!-- Menu Footer-->
-                <li class="user-footer">
-                  <!--<div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div> -->
-                  <div class="text-center">
 
-                    <?php
-                    echo anchor('auth/logout', '<button class="btn btn-danger btn-flat">Sign Out</button>');
-                    ?>
+        <li class="nav-item dropdown pe-3">
 
-                  </div>
-                </li>
-              </ul>
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $this->session->userdata('nama_lengkap'); ?></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6><?php echo $this->session->userdata('nama_lengkap'); ?></h6>
+              <span>
+                Online
+              </span>
             </li>
-            <!-- Control Sidebar Toggle Button -->
             <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+              <hr class="dropdown-divider">
             </li>
 
-          </ul>
-        </div>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="<?= base_url('auth/logout') ?>">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Logout</span>
+              </a>
+            </li>
 
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <?php
+      $id_level_user = $this->session->userdata('id_level_user');
+
+      $sql_menu = "SELECT * FROM `tabel_menu` WHERE id IN(SELECT id_menu FROM tbl_user_rule WHERE id_level_user = $id_level_user) AND is_main_menu = 0";
+
+      $main_menu  = $this->db->query($sql_menu)->result();
+      ?>
+      <!-- Nav Item - Dashboard -->
+      <?php foreach ($main_menu as $main) : ?>
+        <?php $submenu = $this->db->get_where('tabel_menu', array('is_main_menu' => $main->id)); ?>
+        <?php if ($submenu->num_rows() == 0) : ?>
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="<?= base_url() . $main->link; ?>">
+              <i class="bi <?= $main->icon; ?>"></i>
+              <span><?= $main->nama_menu; ?></span></a>
+          <?php else : ?>
+
+
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapse<?= $main->id; ?>" aria-expanded="true" aria-controls="collapse<?= $main->id; ?>">
+              <i class="bi <?= $main->icon; ?>"></i>
+              <span><?= $main->nama_menu; ?></span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="collapse<?= $main->id; ?>" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+              <?php foreach ($submenu->result() as $s) : ?>
+                <li>
+                  <a href="<?= $s->link; ?>">
+                    <i class="bi bi-circle"></i><span><?= $s->nama_menu; ?></span>
+                  </a>
+                </li>
+              <?php endforeach; ?>
+
+            </ul>
+          </li>
+        <?php endif; ?>
+        </li>
+
+
+      <?php endforeach; ?>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="<?= base_url('auth/logout'); ?>">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Logout</span></a>
+
+      </li>
+
+
+
+
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1><?= ucwords($this->uri->segment(2)) ?></h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+          <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
+          <li class="breadcrumb-item"><?= ucwords($this->uri->segment(1)) ?></li>
+          <li class="breadcrumb-item active"><?= ucwords($this->uri->segment(2)) ?></li>
+        </ol>
       </nav>
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-      <!-- sidebar: style can be found in sidebar.less -->
-      <section class="sidebar">
-        <!-- Sidebar user panel -->
-        <div class="user-panel">
-          <div class="pull-left image">
-            <img src="<?php echo base_url(); ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-          </div>
-          <div class="pull-left info">
-            <p><?php echo $this->session->userdata('nama_lengkap'); ?></p>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-          </div>
-        </div>
-        <!-- search form -->
-        <form action="#" method="get" class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
-            <span class="input-group-btn">
-              <button type="submit" name="search" id="search-btn" class="btn btn-flat">
-                <i class="fa fa-search"></i>
-              </button>
-            </span>
-          </div>
-        </form>
-        <!-- /.search form -->
-        <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu" data-widget="tree">
-          <li class="header">MAIN NAVIGATION</li>
-
-          <!-- menu dinamis -->
-
-          <?php
-          $id_level_user = $this->session->userdata('id_level_user');
-
-          $sql_menu = "SELECT * FROM `tabel_menu` WHERE id IN(SELECT id_menu FROM tbl_user_rule WHERE id_level_user = $id_level_user) AND is_main_menu = 0";
-
-          $main_menu  = $this->db->query($sql_menu)->result();
-
-          foreach ($main_menu as $main) {
-            // check apakah memiliki submenu?
-            $submenu  = $this->db->get_where('tabel_menu', array('is_main_menu' => $main->id));
-
-            if ($submenu->num_rows() > 0) {
-              //submenu true
-              echo "<li class='treeview'>" . anchor($main->link, "<i class='" . $main->icon . "'></i>" .
-                "<span>" . $main->nama_menu . "</span>" .
-                '<span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                   </span>');
-
-              //submenunya disini
-              echo "<ul class='treeview-menu'>";
-
-              foreach ($submenu->result() as $sub) {
-                echo "<li>" . anchor($sub->link, "<i class='" . $sub->icon . "'></i>" . "<span>" . $sub->nama_menu . "</span>") . "</li>";
-              }
-
-              echo "</ul></li>";
-            } else {
-              //submenu false dan main menu true
-              echo "<li>" . anchor($main->link, "<i class='" . $main->icon . "'></i>" . "<span>" . $main->nama_menu . "</span>") . "</li>";
-            }
-          }
-
-          // tanpa pembatasan hak akses menu
-          // $main_menu  = $this->db->get_where('tabel_menu', array('is_main_menu' => 0))->result();
-
-          // foreach ($main_menu as $main) {
-          //     // check apakah memiliki submenu?
-          //     $submenu  = $this->db->get_where('tabel_menu', array('is_main_menu' => $main->id));
-
-          //     if ($submenu->num_rows()>0) {
-          //       //submenu true
-          //       echo "<li class='treeview'>".anchor($main->link,"<i class='".$main->icon."'></i>".
-          //            "<span>".$main->nama_menu."</span>".
-          //            '<span class="pull-right-container">
-          //               <i class="fa fa-angle-left pull-right"></i>
-          //            </span>');
-
-          //       //submenunya disini
-          //       echo "<ul class='treeview-menu'>";
-
-          //       foreach ($submenu->result() as $sub) {
-          //         echo "<li>" .anchor($sub->link,"<i class='".$sub->icon."'></i>"."<span>".$sub->nama_menu."</span>"). "</li>";
-          //       }
-
-          //       echo "</ul></li>";
-          //     } else {
-          //       //submenu false dan main menu true
-          //       echo "<li>" .anchor($main->link,"<i class='".$main->icon."'></i>"."<span>".$main->nama_menu."</span>"). "</li>";
-          //     }  
-          // }
-
-          ?>
-          <!-- end menu dinamis -->
-
-        </ul>
-      </section>
-      <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
+    </div><!-- End Page Title -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <h1>
-          Dashboard
-          <small>Version 2.0</small>
-        </h1>
-        <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-          <li class="active">Dashboard</li>
-        </ol>
+      <section class="section">
+        <div class="row">
+          <div class="col-lg-12">
+            <?php echo $contents; ?>
+          </div>
+        </div>
       </section>
 
-      <!-- Main content -->
-      <?php echo $contents; ?>
-      <!-- /.content -->
 
     </div>
-    <!-- /.content-wrapper -->
+  </main>
 
-    <footer class="main-footer">
-      <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
-      </div>
-      <strong>Copyright &copy; 2024 Sania.</strong> All rights
-      reserved.
-    </footer>
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Siakad</span></strong> by Sania. All Rights Reserved
+    </div>
+  </footer><!-- End Footer -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Create the tabs -->
-      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-        <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-      </ul>
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <!-- Home tab content -->
-        <div class="tab-pane" id="control-sidebar-home-tab">
-          <h3 class="control-sidebar-heading">Recent Activity</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+  <!-- Vendor JS Files -->
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/chart.js/chart.umd.js"></script>
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/echarts/echarts.min.js"></script>
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/quill/quill.min.js"></script>
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/tinymce/tinymce.min.js"></script>
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/vendor/php-email-form/validate.js"></script>
 
-                  <p>Will be 23 on April 24th</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-user bg-yellow"></i>
+  <!-- Template Main JS File -->
+  <script src="<?= base_url('assets/backend/nice/assets') ?>/js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.14.0-beta2/js/bootstrap-select.min.js" integrity="sha512-FHZVRMUW9FsXobt+ONiix6Z0tIkxvQfxtCSirkKc5Sb4TKHmqq1dZa8DphF0XqKb3ldLu/wgMa8mT6uXiLlRlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $('#kabupaten');
+    $(document).ready(function() {
 
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+      $('#provinsi').change(function() {
+        $('#default_text').text("Pilih Kab/Kota").addClass('default');
+        $('#default_text2').text("Pilih Kecamatan").addClass('default');
+        $('#default_text3').text("Pilih Kelurahan").addClass('default');
 
-                  <p>New phone +1(800)555-1234</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+        var kode = $('#provinsi').val();
+        console.log(kode);
+        $.ajax({
+          url: "<?= base_url('auth/cariKab'); ?>",
+          method: "POST",
+          dataType: "JSON",
+          data: {
+            kode: kode
+          },
+          success: function(array) {
+            var html = '';
+            html += '<option value="" selected hidden>Pilih Kab/Kota</option>';
 
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
 
-                  <p>nora@example.com</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-file-code-o bg-green"></i>
+            for (let index = 0; index < array.length; index++) {
+              html += "<option value='" + array[index].kode + "'>" + array[index].nama + "</option>"
 
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+            }
+            $('#kabupaten').html(html);
+            $('#kecamatan').html('<option value="" selected hidden>Pilih Kecamatan</option>');
+            $('#kelurahan').html('<option value="" selected hidden>Pilih Kelurahan</option>');
+          }
+        })
+      })
+    })
 
-                  <p>Execution time 5 seconds</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
+    $('#kecamatan')
+      .change();
+    $(document).ready(function() {
 
-          <h3 class="control-sidebar-heading">Tasks Progress</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Custom Template Design
-                  <span class="label label-danger pull-right">70%</span>
-                </h4>
+      $('#kabupaten').change(function() {
+        $('#default_text2').text("Pilih Kecamatan").addClass('default');
+        $('#default_text3').text("Pilih Kelurahan").addClass('default');
 
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Update Resume
-                  <span class="label label-success pull-right">95%</span>
-                </h4>
+        var kode = $('#kabupaten').val();
+        console.log(kode);
+        $.ajax({
+          url: "<?= base_url('auth/cariKec'); ?>",
+          method: "POST",
+          dataType: "JSON",
+          data: {
+            kode: kode
+          },
+          success: function(array) {
+            var html = '';
+            html += '<option value="" selected hidden>Pilih Kecamatan</option>';
 
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Laravel Integration
-                  <span class="label label-warning pull-right">50%</span>
-                </h4>
+            for (let index = 0; index < array.length; index++) {
+              html += "<option value='" + array[index].kode + "'>" + array[index].nama + "</option>"
 
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Back End Framework
-                  <span class="label label-primary pull-right">68%</span>
-                </h4>
+            }
+            $('#kecamatan').html(html);
+            $('#kelurahan').html('<option value="" selected hidden>Pilih Kelurahan</option>');
+          }
+        })
+      })
+    })
 
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
+    $('#kelurahan')
+      .change();
+    $(document).ready(function() {
 
-        </div>
-        <!-- /.tab-pane -->
+      $('#kecamatan').change(function() {
+        $('#default_text3').text("Pilih Kelurahan").addClass('default');
 
-        <!-- Settings tab content -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-          <form method="post">
-            <h3 class="control-sidebar-heading">General Settings</h3>
+        var kode = $('#kecamatan').val();
+        console.log(kode);
+        $.ajax({
+          url: "<?= base_url('auth/cariKel'); ?>",
+          method: "POST",
+          dataType: "JSON",
+          data: {
+            kode: kode
+          },
+          success: function(array) {
+            var html = '';
+            html += '<option value="" selected hidden>Pilih Kelurahan</option>';
 
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Report panel usage
-                <input type="checkbox" class="pull-right" checked>
-              </label>
+            for (let index = 0; index < array.length; index++) {
+              html += "<option value='" + array[index].kode + "'>" + array[index].nama + "</option>"
 
-              <p>
-                Some information about this general settings option
-              </p>
-            </div>
-            <!-- /.form-group -->
+            }
+            $('#kelurahan').html(html);
+          }
+        })
+      })
+    })
+  </script>
 
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Allow mail redirect
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-
-              <p>
-                Other sets of options are available
-              </p>
-            </div>
-            <!-- /.form-group -->
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Expose author name in posts
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-
-              <p>
-                Allow the user to show his name in blog posts
-              </p>
-            </div>
-            <!-- /.form-group -->
-
-            <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Show me as online
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-            </div>
-            <!-- /.form-group -->
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Turn off notifications
-                <input type="checkbox" class="pull-right">
-              </label>
-            </div>
-            <!-- /.form-group -->
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Delete chat history
-                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-              </label>
-            </div>
-            <!-- /.form-group -->
-          </form>
-        </div>
-        <!-- /.tab-pane -->
-      </div>
-    </aside>
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-
-  </div>
-  <!-- ./wrapper -->
-
-  <!-- jQuery 3 -->
-  <!-- <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script> -->
-  <!-- Bootstrap 3.3.7 -->
-  <script src="<?php echo base_url(); ?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- FastClick -->
-  <script src="<?php echo base_url(); ?>assets/bower_components/fastclick/lib/fastclick.js"></script>
-  <!-- AdminLTE App -->
-  <script src="<?php echo base_url(); ?>assets/dist/js/adminlte.min.js"></script>
-  <!-- Sparkline -->
-  <script src="<?php echo base_url(); ?>assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-  <!-- jvectormap  -->
-  <script src="<?php echo base_url(); ?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-  <script src="<?php echo base_url(); ?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <!-- SlimScroll -->
-  <script src="<?php echo base_url(); ?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-  <!-- ChartJS -->
-  <script src="<?php echo base_url(); ?>assets/bower_components/Chart.js/Chart.js"></script>
-  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="<?php echo base_url(); ?>assets/dist/js/pages/dashboard2.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="<?php echo base_url(); ?>assets/dist/js/demo.js"></script>
 
 </body>
 

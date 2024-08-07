@@ -1,74 +1,94 @@
-<!-- Main content -->
-<section class="content">
+<!-- Left side columns -->
+<section class="section dashboard">
+  <div class="col-lg-12">
+    <div class="row">
 
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3><?php echo $user['hasil']; ?></h3>
+      <!-- Sales Card -->
+      <div class="col-xxl-4 col-xl-6">
+        <div class="card info-card sales-card">
 
-                  <p>Pengguna Sistem</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-id-badge"></i>
-                </div>
-                <a href="<?php echo site_url('user') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          <div class="card-body">
+            <h5 class="card-title">Pengguna <span>| Total</span></h5>
+
+            <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-person-lines-fill"></i>
+              </div>
+              <div class="ps-3">
+                <h6><?php echo $user['hasil']; ?></h6>
+                <span class="text-muted small pt-2 ps-1"><a href="<?php echo site_url('user') ?>" class="small-box-footer">Selengkapnya <i class="bi bi-arrow-right-short"></i></a></span>
               </div>
             </div>
-            <!-- ./col -->
+          </div>
 
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3><?php echo $siswa['hasil']; ?></h3>
+        </div>
+      </div><!-- End Sales Card -->
 
-                  <p>Siswa</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-users"></i>
-                </div>
-                <a href="<?php echo site_url('siswa') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      <!-- Sales Card -->
+      <div class="col-xxl-4 col-xl-6">
+        <div class="card info-card sales-card">
+
+          <div class="card-body">
+            <h5 class="card-title">Siswa <span>| Total</span></h5>
+
+            <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-people"></i>
+              </div>
+              <div class="ps-3">
+                <h6><?php echo $siswa['hasil']; ?></h6>
+                <span class="text-muted small pt-2 ps-1"><a href="<?php echo site_url('user') ?>" class="small-box-footer">Selengkapnya <i class="bi bi-arrow-right-short"></i></a></span>
               </div>
             </div>
-            <!-- ./col -->
+          </div>
 
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3><?php echo $guru['hasil']; ?></h3>
+        </div>
+      </div><!-- End Sales Card -->
 
-                  <p>Guru</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-user-circle"></i>
-                </div>
-                <a href="<?php echo site_url('guru') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      <!-- Sales Card -->
+      <div class="col-xxl-4 col-xl-6">
+        <div class="card info-card sales-card">
+
+          <div class="card-body">
+            <h5 class="card-title">Guru <span>| Total</span></h5>
+
+            <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-people"></i>
+              </div>
+              <div class="ps-3">
+                <h6><?php echo $guru['hasil']; ?></h6>
+                <span class="text-muted small pt-2 ps-1"><a href="<?php echo site_url('guru') ?>" class="small-box-footer">Selengkapnya <i class="bi bi-arrow-right-short"></i></a></span>
               </div>
             </div>
-            <!-- ./col -->
+          </div>
 
-            <div class="col-lg-6 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3><?php echo $ruangan['hasil']; ?></h3>
+        </div>
+      </div><!-- End Sales Card -->
 
-                  <p>Ruangan Kelas</p>
-                </div>
-                <div class="icon">
-                  <i class="fa fa-building"></i>
-                </div>
-                <a href="<?php echo site_url('ruangan') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+      <!-- Sales Card -->
+      <div class="col-xxl-4 col-xl-6">
+        <div class="card info-card sales-card">
+
+          <div class="card-body">
+            <h5 class="card-title">Ruangan Kelas <span>| Total</span></h5>
+
+            <div class="d-flex align-items-center">
+              <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                <i class="bi bi-door-open"></i>
+              </div>
+              <div class="ps-3">
+                <h6><?php echo $ruangan['hasil']; ?></h6>
+                <span class="text-muted small pt-2 ps-1"><a href="<?php echo site_url('ruangan') ?>" class="small-box-footer">Selengkapnya <i class="bi bi-arrow-right-short"></i></a></span>
               </div>
             </div>
-            <!-- ./col -->
+          </div>
 
-      </div>
-      <!-- /.row -->
+        </div>
+      </div><!-- End Sales Card -->
 
+
+
+    </div>
+  </div><!-- End Left side columns -->
 </section>
-<!-- /.content -->

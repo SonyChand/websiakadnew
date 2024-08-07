@@ -1,71 +1,64 @@
-<section class="content">
-    <div class="row">
+<!-- filter -->
+<div class="col-xs-4">
 
-        <!-- filter -->
-        <div class="col-xs-4">
-
-          <div class="box box-info">
-            <div class="box-header with-border">
-              <h3 class="box-title">Filter Data</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                
-                <?php
-                    echo form_open('siswa/export_excel');
-                ?>
-
-                <table class="table table-bordered">
-                    <tr>
-                        <td>Jurusan</td>
-                        <td>
-                            <?php echo cmb_dinamis('jurusan', 'tbl_jurusan', 'nama_jurusan', 'kd_jurusan', null, "id='filter_jurusan' onChange='loadKelas()'") 
-                            ?>        
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Kelas</td>
-                        <td>    
-                            <div id="kelas"></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                           <button type="submit" name="export_jadwal" class="btn btn-success btn-sm"><i class="fa fa-print" aria-hidden="true"></i> Export Data</button>
-                        </td>
-                    </tr>
-                </table>
-
-                </form>
-
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
+    <div class="card card-info">
+        <div class="card-header with-border">
+            <h3 class="card-title">Filter Data</h3>
         </div>
-        <!-- /.col -->
+        <!-- /.card-header -->
+        <div class="card-body">
 
-        <div class="col-xs-8">
+            <?php
+            echo form_open('siswa/export_excel');
+            ?>
 
-          <div class="box box-primary">
-            <div class="box-header  with-border">
-              <h3 class="box-title">Data Table Siswa</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
+            <table class="table table-bordered">
+                <tr>
+                    <td>Jurusan</td>
+                    <td>
+                        <?php echo cmb_dinamis('jurusan', 'tbl_jurusan', 'nama_jurusan', 'kd_jurusan', null, "id='filter_jurusan' onChange='loadKelas()'")
+                        ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Kelas</td>
+                    <td>
+                        <div id="kelas"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" name="export_jadwal" class="btn btn-success btn-sm"><i class="fa fa-print" aria-hidden="true"></i> Export Data</button>
+                    </td>
+                </tr>
+            </table>
 
-                <div id="dataSiswa"></div>
+            </form>
 
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
         </div>
-        <!-- /.col -->
-
+        <!-- /.card-body -->
     </div>
-    <!-- /.row -->
-</section>
+    <!-- /.card -->
+</div>
+<!-- /.col -->
+
+<div class="col-xs-8">
+
+    <div class="card card-primary">
+        <div class="card-header  with-border">
+            <h3 class="card-title">Data Table Siswa</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+
+            <div id="dataSiswa"></div>
+
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</div>
+<!-- /.col -->
 
 <!-- punya lama -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.0/jquery.dataTables.js"></script> -->
@@ -85,37 +78,35 @@
 <!-- loadDataSiswa() -> untuk menampilkan data siswa nim dan nama sesuai kode_kelas yang dipilih di filter, lalu ditampilkan ke div id = kelas yang bedada di view/siswa_aktif -> terletak di controller Siswa -->
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    $(document).ready(function() {
         loadKelas();
     });
 </script>
 
 <script type="text/javascript">
-    function loadKelas()
-    {
+    function loadKelas() {
         //var tingkatan_kelas = $("#filter_tingkatan").val();
-        var jurusan         = $("#filter_jurusan").val();
-        
+        var jurusan = $("#filter_jurusan").val();
+
         $.ajax({
-            type    : 'GET',
-            url     : '<?php echo base_url() ?>kelas/combobox_kelas',
-            data    : 'kd_jurusan='+jurusan,
-            success : function(html) {
+            type: 'GET',
+            url: '<?php echo base_url() ?>kelas/combobox_kelas',
+            data: 'kd_jurusan=' + jurusan,
+            success: function(html) {
                 $("#kelas").html(html);
-                var kelas   = $("#cbkelas").val();
+                var kelas = $("#cbkelas").val();
                 loadSiswa(kelas);
             }
         })
     }
 
-    function loadSiswa(kelas)
-    {   
-        var kelas   = $("#cbkelas").val();
+    function loadSiswa(kelas) {
+        var kelas = $("#cbkelas").val();
         $.ajax({
-            type    : 'GET',
-            url     : '<?php echo base_url() ?>siswa/loadDataSiswa',
-            data    : 'kd_kelas='+kelas,
-            success : function(html) {
+            type: 'GET',
+            url: '<?php echo base_url() ?>siswa/loadDataSiswa',
+            data: 'kd_kelas=' + kelas,
+            success: function(html) {
                 $("#dataSiswa").html(html);
             }
         })
